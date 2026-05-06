@@ -1,0 +1,78 @@
+.main {
+  text-align: center;
+  font-family: "Roboto Slab", "Times New Roman", sans-serif;
+  font-weight: 400;
+  color: #ffffff;
+}
+
+.main__title {
+  font-size: 60px;
+  margin: 80px 0 0;
+  display: inline-block;
+  text-align: left;
+}
+
+.main__title span {
+  display: block;
+}
+
+.main__description {
+  font-size: 18px;
+  margin: 32px 0 0 0;
+}
+
+/* Tablet Responsive (max-width: 1221px) */
+@media (max-width: 1221px) {
+  .main__description {
+    margin-top: 16px;
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .main {
+    text-align: left;
+  }
+
+  .main__title {
+    font-size: 36px;
+    padding: 0 16px;
+    display: block;
+    margin-top: 30px;
+  }
+
+  .main__title-line1 {
+    color: transparent;
+    position: relative;
+  }
+
+  .main__title-line1::before {
+    content: "What's going on";
+    color: #ffffff;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+
+  .main__title-line2 {
+    color: transparent;
+    position: relative;
+  }
+
+  .main__title-line2::before {
+    content: "in the world?";
+    color: #ffffff;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+
+  .main__description {
+    font-size: 18px;
+    line-height: 1.5;
+    max-width: 100%;
+    text-align: left;
+    padding: 0 16px;
+    margin-top: 16px;
+  }
+}
