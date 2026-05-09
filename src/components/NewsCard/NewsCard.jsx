@@ -13,6 +13,8 @@ function NewsCard({
   showKeyword = false, // Show keyword badge only on saved news page
   variant = "default", // "default" or "saved"
 }) {
+  // Get the article URL - could be stored as 'url' or 'link'
+  const articleUrl = article.url || article.link;
   const { title, description, urlToImage, publishedAt, source } = article;
 
   // Format the date
@@ -117,7 +119,20 @@ function NewsCard({
       {/* MIDDLE SECTION: Date, Title, Description */}
       <div className="news-card__content">
         <span className="news-card__date">{formatDate(publishedAt)}</span>
-        <h3 className="news-card__title">{title}</h3>
+        <h3 className="news-card__title">
+          {articleUrl ? (
+            <a
+              href={articleUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="news-card__title-link"
+            >
+              {title}
+            </a>
+          ) : (
+            title
+          )}
+        </h3>
         <p className="news-card__description">
           {description
             ? description.substring(0, 200) + "..."

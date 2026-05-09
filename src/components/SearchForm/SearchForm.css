@@ -1,3 +1,11 @@
+/* Search Form Block */
+.search-form {
+  display: inline-block;
+  position: relative;
+  font-family: "Roboto", Arial, sans-serif;
+  font-weight: 400;
+}
+
 .search-form__container {
   display: inline-block;
   position: relative;
@@ -73,8 +81,13 @@
   }
 }
 
-/* Mobile Responsive (max-width: 768px) */
-@media (max-width: 768px) {
+/* Mobile Responsive (max-width: 767px) */
+@media (max-width: 767px) {
+  .search-form {
+    display: block;
+    width: 100%;
+  }
+
   .search-form__container {
     display: flex;
     flex-direction: column;

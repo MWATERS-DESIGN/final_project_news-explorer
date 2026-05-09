@@ -3,6 +3,8 @@
   margin: 0;
   gap: 42px;
   align-items: center;
+  font-family: "Roboto", Arial, sans-serif;
+  font-weight: 500;
 }
 
 .navigation__link {
@@ -234,8 +236,8 @@
   width: 100%;
 }
 
-/* Mobile Responsive (max-width: 768px) */
-@media (max-width: 768px) {
+/* Mobile Responsive (max-width: 767px) */
+@media (max-width: 767px) {
   .navigation__container {
     display: none;
   }

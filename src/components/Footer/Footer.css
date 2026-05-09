@@ -3,6 +3,8 @@
   max-width: 1440px;
   margin: 0 auto;
   padding: 0 auto;
+  font-family: "Roboto", Arial, sans-serif;
+  font-weight: 400;
 }
 
 .footer__page-section {
@@ -36,8 +38,19 @@
   height: 24px;
 }
 
-/* Mobile Responsive (max-width: 768px) */
-@media (max-width: 768px) {
+/* Tablet */
+@media (max-width: 811px) {
+  .footer__copyright {
+    margin: 24px auto 19px 40px;
+  }
+
+  .footer__social-icons {
+    margin-right: 40px;
+  }
+}
+
+/* Mobile Responsive (max-width: 767px) */
+@media (max-width: 767px) {
   .footer__page-section {
     position: relative;
     flex-direction: column;

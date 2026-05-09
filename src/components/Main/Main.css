@@ -1,6 +1,6 @@
 .main {
   text-align: center;
-  font-family: "Roboto Slab", "Times New Roman", sans-serif;
+  font-family: "Roboto Slab", "Times New Roman", serif;
   font-weight: 400;
   color: #ffffff;
 }
@@ -19,6 +19,8 @@
 .main__description {
   font-size: 18px;
   margin: 32px 0 0 0;
+  font-family: "Roboto", Arial, sans-serif;
+  font-weight: 400;
 }
 
 /* Tablet Responsive (max-width: 1221px) */
@@ -29,7 +31,7 @@
 }
 
 /* Responsive */
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .main {
     text-align: left;
   }

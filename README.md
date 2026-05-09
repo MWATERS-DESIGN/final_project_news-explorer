@@ -10,6 +10,11 @@ A modern, responsive news aggregation web application built with React and Vite.
 
 [https://MWATERS-DESIGN.github.io/final_project_news-explorer/](https://MWATERS-DESIGN.github.io/final_project_news-explorer/)
 
+## Project Pitch Video
+
+Check out [this video](https://www.loom.com/share/a1d2d2ccdf2d4b5a9da09f9c3b602d6d), where I describe my
+project.
+
 ## ✨ Features
 
 - **News Search**: Search for news articles from the past 7 days using keywords

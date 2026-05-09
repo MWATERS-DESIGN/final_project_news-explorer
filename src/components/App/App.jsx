@@ -19,7 +19,18 @@ function App() {
   const location = useLocation();
   const [articles, setArticles] = useState([]);
   const [searchError, setSearchError] = useState("");
-  const [savedArticles, setSavedArticles] = useState([]);
+  const [savedArticles, setSavedArticles] = useState(() => {
+    // Initialize from localStorage on mount
+    const stored = localStorage.getItem("savedArticles");
+    if (stored) {
+      try {
+        return JSON.parse(stored);
+      } catch (err) {
+        console.error("Failed to parse saved articles from localStorage:", err);
+      }
+    }
+    return [];
+  });
   const [isLoading, setIsLoading] = useState(false);
   const [isSearchLoading, setIsSearchLoading] = useState(false);
   const [hasSearched, setHasSearched] = useState(false);
@@ -41,42 +52,16 @@ function App() {
     return localStorage.getItem("token") || "";
   });
 
-  // Load saved articles on mount
+  // Load saved articles from backend when logged in
   useEffect(() => {
     if (isLoggedIn) {
-      setIsLoading(true);
       getItems()
         .then((items) => {
           setSavedArticles(items);
         })
         .catch((err) => {
           console.error("Failed to load saved articles:", err);
-          // Fallback to localStorage if backend fails
-          const stored = localStorage.getItem("savedArticles");
-          if (stored) {
-            try {
-              setSavedArticles(JSON.parse(stored));
-            } catch (e) {
-              console.error(
-                "Failed to parse saved articles from localStorage:",
-                e,
-              );
-            }
-          }
-        })
-        .finally(() => {
-          setIsLoading(false);
         });
-    } else {
-      // Load from localStorage when not logged in
-      const stored = localStorage.getItem("savedArticles");
-      if (stored) {
-        try {
-          setSavedArticles(JSON.parse(stored));
-        } catch (e) {
-          console.error("Failed to parse saved articles from localStorage:", e);
-        }
-      }
     }
   }, [isLoggedIn]);
 
@@ -326,7 +311,7 @@ function App() {
     >
       <div className="page__content">
         {isHome ? (
-          <div className="page__hero">
+          <section className="page__hero">
             <Header
               isLoggedIn={isLoggedIn}
               userName={userName}
@@ -341,7 +326,7 @@ function App() {
                 searchError === "Please enter a keyword" ? searchError : ""
               }
             />
-          </div>
+          </section>
         ) : (
           <Header
             isLoggedIn={isLoggedIn}

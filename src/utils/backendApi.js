@@ -24,7 +24,8 @@ const generateId = () => {
 // Simulates fetching saved articles from the database
 
 export function getItems() {
-  return new Promise((resolve, reject) => {
+  // eslint-disable-next-line no-unused-vars
+  return new Promise((resolve, _reject) => {
     // Simulate network delay
     setTimeout(() => {
       // Return a copy of the saved articles to prevent direct mutation

@@ -29,6 +29,7 @@
 
 .about__paragraph {
   margin: 0;
+  font-family: "Roboto", "Times New Roman", sans-serif;
   font-size: 18px;
   font-weight: 400;
 }

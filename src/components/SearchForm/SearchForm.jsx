@@ -16,17 +16,19 @@ function SearchForm({ onSearch, validationError }) {
   };
 
   return (
-    <form className="search-form__container" onSubmit={handleSubmit}>
-      <input
-        type="text"
-        className="search-form__input"
-        placeholder="Enter topic"
-        value={query}
-        onChange={handleInputChange}
-      />
-      <button type="submit" className="search-form__button">
-        Search
-      </button>
+    <form className="search-form" onSubmit={handleSubmit}>
+      <div className="search-form__container">
+        <input
+          type="text"
+          className="search-form__input"
+          placeholder="Enter topic"
+          value={query}
+          onChange={handleInputChange}
+        />
+        <button type="submit" className="search-form__button">
+          Search
+        </button>
+      </div>
       {validationError && (
         <span className="search-form__error">{validationError}</span>
       )}

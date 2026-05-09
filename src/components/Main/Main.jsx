@@ -3,7 +3,7 @@ import SearchForm from "../SearchForm/SearchForm";
 
 function Main({ onSearch, validationError }) {
   return (
-    <div className="main">
+    <main className="main">
       <h1 className="main__title">
         <span className="main__title-line1">What's going on in</span>
         <span className="main__title-line2">the world?</span>
@@ -13,7 +13,7 @@ function Main({ onSearch, validationError }) {
         account.
       </p>
       <SearchForm onSearch={onSearch} validationError={validationError} />
-    </div>
+    </main>
   );
 }
 

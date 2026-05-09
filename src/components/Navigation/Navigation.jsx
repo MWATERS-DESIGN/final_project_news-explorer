@@ -31,47 +31,49 @@ function Navigation({
   return (
     <>
       {/* Desktop Navigation */}
-      <div className="navigation__container">
-        <NavLink
-          to="/"
-          className={({ isActive }) =>
-            `navigation__link ${isActive ? "navigation__link_active" : ""}`
-          }
-        >
-          Home
-        </NavLink>
-
-        {isLoggedIn && (
+      <nav className="navigation">
+        <div className="navigation__container">
           <NavLink
-            to="/saved-news"
+            to="/"
             className={({ isActive }) =>
               `navigation__link ${isActive ? "navigation__link_active" : ""}`
             }
           >
-            Saved Articles
+            Home
           </NavLink>
-        )}
 
-        {isLoggedIn ? (
-          <button
-            className="navigation__sign-out-btn"
-            onClick={onSignOut}
-            aria-label="Sign out"
-            title="Sign out"
-          >
-            <span className="navigation__username">{userName}</span>
-            <img
-              src={isSavedNewsPage ? signoutBlack : signoutWhite}
-              alt="Sign out"
-              className="navigation__sign-out-icon"
-            />
-          </button>
-        ) : (
-          <button className="navigation__sign-in-btn" onClick={onSignInClick}>
-            Sign In
-          </button>
-        )}
-      </div>
+          {isLoggedIn && (
+            <NavLink
+              to="/saved-news"
+              className={({ isActive }) =>
+                `navigation__link ${isActive ? "navigation__link_active" : ""}`
+              }
+            >
+              Saved Articles
+            </NavLink>
+          )}
+
+          {isLoggedIn ? (
+            <button
+              className="navigation__sign-out-btn"
+              onClick={onSignOut}
+              aria-label="Sign out"
+              title="Sign out"
+            >
+              <span className="navigation__username">{userName}</span>
+              <img
+                src={isSavedNewsPage ? signoutBlack : signoutWhite}
+                alt="Sign out"
+                className="navigation__sign-out-icon"
+              />
+            </button>
+          ) : (
+            <button className="navigation__sign-in-btn" onClick={onSignInClick}>
+              Sign In
+            </button>
+          )}
+        </div>
+      </nav>
 
       {/* Mobile Navigation Overlay */}
       <div
