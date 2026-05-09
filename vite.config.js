@@ -5,6 +5,9 @@ import react from "@vitejs/plugin-react";
 export default defineConfig({
   base: "/final_project_news-explorer/",
   plugins: [react()],
+  css: {
+    devSourcemap: true,
+  },
   server: {
     port: 3000,
   },

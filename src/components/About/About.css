@@ -1,3 +1,4 @@
+/* Cache bust: force new hash for GitHub Pages CDN */
 .about {
   background-color: #ffffff;
   display: flex;

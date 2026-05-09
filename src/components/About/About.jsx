@@ -1,5 +1,5 @@
-import "./About.css?v=2";
-import Author from "/public/Author.jpg";
+import "./About.css?v=3";
+import Author from "/Author.jpg";
 
 // trivial change for cache busting
 
