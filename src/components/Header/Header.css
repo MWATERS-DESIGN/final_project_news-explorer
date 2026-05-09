@@ -1,0 +1,54 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  font-family: "Roboto", Arial, sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+  align-items: center;
+  padding: 30px 104px 26px;
+}
+
+.header__logo {
+  margin: 0;
+}
+
+/* White background for header on saved news page */
+.header_theme_black {
+  background-color: #ffffff;
+}
+
+/* Tablet Responsive (max-width: 1221px) */
+@media (max-width: 1221px) {
+  .header {
+    padding: 30px 40px 26px;
+  }
+}
+
+/* Mobile Responsive (max-width: 768px) */
+@media (max-width: 768px) {
+  .header {
+    padding: 16px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: transparent;
+  }
+
+  .header_theme_black {
+    background-color: #ffffff;
+  }
+
+  .header::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+
+  .header_theme_black::after {
+    background-color: rgba(26, 27, 34, 0.1);
+  }
+}

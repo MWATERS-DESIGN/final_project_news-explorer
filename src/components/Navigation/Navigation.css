@@ -1,0 +1,248 @@
+.navigation__container {
+  display: flex;
+  margin: 0;
+  gap: 42px;
+  align-items: center;
+  font-family: "Roboto", Arial, sans-serif;
+  font-weight: 500;
+}
+
+.navigation__link {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 18px;
+  cursor: pointer;
+  position: relative;
+}
+
+.navigation__link_active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -17px;
+  width: 100%;
+  height: 2px;
+  background-color: #ffffff;
+}
+
+.navigation__sign-in-btn {
+  background: none;
+  width: 176px;
+  height: 48px;
+  font-size: 18px;
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+  border: 1px solid #ffffff;
+  border-radius: 100px;
+  padding: 0;
+  transition: all 0.2s ease;
+}
+
+.navigation__sign-in-btn:hover {
+  background-color: #ffffff;
+  color: #1a1b22;
+}
+
+/* Sign Out Button - Pill shape with border */
+.navigation__sign-out-btn {
+  background: none;
+  border: 1px solid #ffffff;
+  border-radius: 100px;
+  cursor: pointer;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 16px;
+  transition: all 0.2s ease;
+}
+
+.navigation__sign-out-btn:hover {
+  background-color: #ffffff;
+  color: #1a1b22;
+}
+
+.navigation__username {
+  color: inherit;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.navigation__sign-out-icon {
+  width: 20px;
+  height: 20px;
+}
+
+/* Black theme for saved news page */
+.header_theme_black .navigation__link {
+  color: #1a1b22;
+}
+
+.header_theme_black .navigation__link_active::after {
+  background-color: #1a1b22;
+}
+
+.header_theme_black .navigation__sign-in-btn {
+  color: #1a1b22;
+  border-color: #1a1b22;
+}
+
+.header_theme_black .navigation__sign-in-btn:hover {
+  background-color: #1a1b22;
+  color: #ffffff;
+}
+
+.header_theme_black .navigation__username {
+  color: #1a1b22;
+}
+
+.header_theme_black .navigation__sign-out-btn {
+  color: #1a1b22;
+  border-color: #1a1b22;
+}
+
+.header_theme_black .navigation__sign-out-btn:hover {
+  background-color: #1a1b22;
+  color: #ffffff;
+}
+
+/* Mobile Navigation Toggle Button */
+.navigation__mobile-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  z-index: 101;
+  color: #ffffff;
+}
+
+/* Toggle button color on saved news page (black theme) */
+.header_theme_black .navigation__mobile-toggle {
+  color: #1a1b22;
+}
+
+.navigation__mobile-toggle-icon {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background-color: currentColor;
+  position: relative;
+  transition: background-color 0.3s ease;
+}
+
+.navigation__mobile-toggle-icon::before,
+.navigation__mobile-toggle-icon::after {
+  content: "";
+  position: absolute;
+  width: 24px;
+  height: 2px;
+  background-color: currentColor;
+  left: 0;
+  transition: transform 0.3s ease;
+}
+
+.navigation__mobile-toggle-icon::before {
+  top: -7px;
+}
+
+.navigation__mobile-toggle-icon::after {
+  top: 7px;
+}
+
+.navigation__mobile-toggle-icon_open {
+  background-color: transparent;
+}
+
+.navigation__mobile-toggle-icon_open::before {
+  transform: rotate(45deg);
+  top: 0;
+}
+
+.navigation__mobile-toggle-icon_open::after {
+  transform: rotate(-45deg);
+  top: 0;
+}
+
+/* Mobile Navigation Overlay */
+.navigation__mobile-overlay {
+  display: none;
+  position: fixed;
+  top: 60px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ffffff;
+  z-index: 99;
+  padding: 24px 16px;
+  overflow-y: auto;
+}
+
+.navigation__mobile-overlay_open {
+  display: block;
+  background-color: #1a1b22;
+  height: 230px;
+}
+
+.navigation__mobile-content {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  height: 100%;
+}
+
+.navigation__mobile-link {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.navigation__mobile-link_active {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.navigation__mobile-sign-in-btn {
+  background-color: #1a1b22;
+  color: #ffffff;
+  border: 1px solid #ffffff;
+  border-radius: 100px;
+  padding: 16px;
+  font-size: 18px;
+  font-weight: 500;
+  cursor: pointer;
+  width: 100%;
+  align-self: center;
+  margin: 0 16px;
+  text-align: center;
+  margin-top: auto;
+  margin-bottom: 24px;
+}
+
+.navigation__mobile-sign-out-btn {
+  background: none;
+  border: 1px solid #ffffff;
+  border-radius: 100px;
+  padding: 12px 16px;
+  color: #ffffff;
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+}
+
+/* Mobile Responsive (max-width: 767px) */
+@media (max-width: 767px) {
+  .navigation__container {
+    display: none;
+  }
+
+  .navigation__mobile-toggle {
+    display: block;
+  }
+}

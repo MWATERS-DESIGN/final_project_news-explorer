@@ -1,0 +1,75 @@
+/* Cache bust: force new hash for GitHub Pages CDN */
+.about {
+  background-color: #ffffff;
+  display: flex;
+}
+
+.about__img {
+  width: 100%;
+  max-width: 464px;
+  aspect-ratio: 1 / 1; /* 👈 keeps it perfectly square */
+  border-radius: 50%; /* 👈 true circle */
+  object-fit: cover; /* 👈 prevents stretching */
+  margin: 80px 0 80px 104px;
+}
+
+.about__content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 600px;
+  margin-left: 56px;
+}
+
+.about__title {
+  margin: 0;
+  font-size: 40px;
+  font-weight: 400;
+  margin-top: 131px;
+}
+
+.about__paragraph {
+  margin: 0;
+  font-family: "Roboto", "Times New Roman", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+/* Tablet Responsive (max-width: 1221px) */
+@media (max-width: 1221px) {
+  .about__content {
+    margin: 0 40px 0 32px;
+  }
+}
+
+/* Mobile Responsive (max-width: 768px) */
+@media (max-width: 810px) {
+  .about {
+    flex-direction: column;
+    padding: 40px 16px;
+  }
+
+  .about__img {
+    width: 272px;
+    height: 272px;
+    margin: 0 auto 24px;
+    display: block;
+  }
+
+  .about__content {
+    max-width: 100%;
+    margin-left: 0;
+    gap: 16px;
+  }
+
+  .about__title {
+    font-size: 28px;
+    margin-top: 0;
+    text-align: left;
+  }
+
+  .about__paragraph {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+}

@@ -1,0 +1,30 @@
+.page {
+  background-color: #d1d2d6;
+}
+
+/* .page__background {
+} */
+
+.page__hero {
+  background-image: url("../../assets/mainbackground.svg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Override background for saved news page */
+.page_saved-news .page__background {
+  background-image: none;
+}
+
+.page_saved-news {
+  background-color: #ffffff;
+}
+
+.page__content {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0;
+  font-family: "Roboto Slab", "Times New Roman", serif;
+  font-weight: 700;
+}
