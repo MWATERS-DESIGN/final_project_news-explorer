@@ -1,5 +1,7 @@
-import "./About.css";
-import Author from "../../assets/Author.jpg";
+import "./About.css?v=2";
+import Author from "/public/Author.jpg";
+
+// trivial change for cache busting
 
 function About() {
   return (
